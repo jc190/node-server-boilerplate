@@ -17,10 +17,13 @@ const users = require('./api/users');
 // const config = require('./config/api');
 
 // Pass passport to passport config file
-// require('./config/passport')(passport)
+require('./config/passport')(passport)
+
+// Set mongoose promise library
+mongoose.Promise = global.Promise;
 
 // Connect to MongoDB through mongoose
-// mongoose.connect('mongodb://' + config.mdbuser + ':' + config.mdbpw + '@localhost:27017/[collection name]')
+// mongoose.connect('mongodb://' + config.mdbuser + ':' + config.mdbpw + '@localhost:27017/[db name]')
 mongoose.connect('mongodb://localhost:27017/test');
 
 // Create express app

@@ -1,6 +1,9 @@
 {
   "name": "node-server-boilerplate",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "description": "Node server w/ Express - Passport - Mongoose",
   "main": "server.js",
   "scripts": {
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/jc190/node-server-boilerplate#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "express": "^4.15.2",
@@ -26,7 +30,8 @@
     "express-validator": "^3.1.2",
     "mongoose": "^4.8.6",
     "morgan": "^1.8.1",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
