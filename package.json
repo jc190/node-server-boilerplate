@@ -1,0 +1,30 @@
+{
+  "name": "node-server-boilerplate",
+  "version": "0.0.1",
+  "description": "Node server w/ Express - Passport - Mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jc190/node-server-boilerplate.git"
+  },
+  "author": "James Calhoun (https://jamesc.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jc190/node-server-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jc190/node-server-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "express-validator": "^3.1.2",
+    "mongoose": "^4.8.6",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2"
+  }
+}
