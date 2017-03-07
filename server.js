@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/test');
 const app  = express();
 
 // Add express middleware
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(compress());
@@ -50,7 +50,7 @@ app.use('/api/users', users);
 
 const server = http.createServer(app);
 
-server.listen(3001, process.env.IP, () => {
+server.listen(3001, process.env.IP || 'localhost', () => {
   const addr = server.address();
-  console.log('Server is listening at: ' + addr.address + ':' + addr.port)
+  console.log('Server is listening at: ' + addr.address + ':' + addr.port);
 })
