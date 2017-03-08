@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 const bcrypt = require('bcryptjs');
 
 const Schema = mongoose.Schema;
@@ -13,14 +14,16 @@ const userSchema = new Schema({
   email: String,
   accounts: {
     local: {
-      email: String,
       password: String
     },
     facebook: {
-      id: String,
-      name: String
+      id: String
     }
   }
 });
 
 const User = module.exports = mongoose.model('User', userSchema);
+
+module.exports.createUser = (user) => {
+  return user.save();
+};

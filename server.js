@@ -25,6 +25,7 @@ mongoose.Promise = global.Promise;
 // Connect to MongoDB through mongoose
 // mongoose.connect('mongodb://' + config.mdbuser + ':' + config.mdbpw + '@localhost:27017/[db name]')
 mongoose.connect('mongodb://localhost:27017/test');
+// console.log(mongoose.connection)
 
 // Create express app
 const app  = express();
@@ -35,7 +36,7 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(compress());
 app.use(require('express-session')({
-  // For more secure session secret place it in config api file and pass it here. ( secret: config.sessionSecret )
+  // For more secure session secret, place it in config api file and pass it here. ( secret: config.sessionSecret )
   secret: 'keyboard cat',
   resave: true,
   saveUninitialized: true
