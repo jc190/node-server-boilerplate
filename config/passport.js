@@ -14,7 +14,7 @@ module.exports = (passport) => {
     usernameField: 'email',
     passwordField: 'password'
   }, (emailAddress, password, done) => {
-    User.getUserByEmail(emailAddress)
+    User.findUserByEmail(email)
       .then((user) => {
         if (!user) return done(null, false, { message: 'User not found.' });
         User.checkPassword(password, user.accounts.local.password)

@@ -27,3 +27,7 @@ const User = module.exports = mongoose.model('User', userSchema);
 module.exports.createUser = (user) => {
   return user.save();
 };
+
+module.exports.findUserByEmail = (email) => {
+   return User.findOne({ email: email }).exec();
+};
