@@ -1,6 +1,8 @@
 // Passport config goes here
 const LocalStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models/users');
+const config = require('./api.js');
 
 module.exports = (passport) => {
   passport.serializeUser((user, done) => done(null, user.id));
@@ -26,4 +28,16 @@ module.exports = (passport) => {
       })
       .catch((err) => { if (err) throw err });
   }));
+  
+  // Facebook Strategy
+  passport.use(new FacebookStrategy({
+    clientID: config.facebook.id,
+    clientSecret: config.facebook.secret,
+    callbackURL: 'http://localhost:3000/api/users/login/facebook/return',
+    profileFields: ['id', 'displayName', 'email']
+  }, (accessToken, refreshToken, profile, done) => {
+    process.nextTick(() => {
+      // User model logic
+    });
+  });
 }
