@@ -56,5 +56,5 @@ const server = http.createServer(app);
 
 server.listen(3001, process.env.IP || 'localhost', () => {
   const addr = server.address();
-  console.log('Server is listening at: ' + addr.address + ':' + addr.port);
+  console.log('Server is listening at: http://' + addr.address + ':' + addr.port);
 })

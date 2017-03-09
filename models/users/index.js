@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 const bcrypt = require('bcryptjs');
+mongoose.Promise = global.Promise;
 
 const Schema = mongoose.Schema;
 
@@ -30,4 +30,8 @@ module.exports.createUser = (user) => {
 
 module.exports.findUserByEmail = (email) => {
    return User.findOne({ email: email }).exec();
+};
+
+module.exports.findByFacebookID = (id) => {
+   return User.findOne({ 'accounts.facebook.id': id }).exec();
 };
